@@ -164,7 +164,7 @@ export default function Home() {
               <div className="divider"></div>
             </div>
           </SectionReveal>
-          <SectionReveal delay={2}>
+          <SectionReveal delay={2} className={styles.fullWidth}>
             <div className={styles.overviewVisual}>
               <div className={styles.structuredImage}></div>
             </div>

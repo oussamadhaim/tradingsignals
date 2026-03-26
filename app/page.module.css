@@ -117,6 +117,10 @@
   margin-bottom: 0;
 }
 
+.fullWidth {
+  width: 100%;
+}
+
 .overviewVisual {
   position: relative;
   width: 100%;
