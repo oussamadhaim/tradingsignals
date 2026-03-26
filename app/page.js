@@ -134,8 +134,8 @@ export default function Home() {
 
       {/* ========== WHY QUANTITATIVE ========== */}
       <section className={`section ${styles.philosophy}`}>
-        <div className={styles.overviewInner}>
-          <SectionReveal>
+        <div className={styles.splitLayout}>
+          <SectionReveal className={styles.splitText}>
             <div className={styles.whyContent}>
               <span className="label">Why Quantitative</span>
               <h2>A Structured, Disciplined Approach</h2>
