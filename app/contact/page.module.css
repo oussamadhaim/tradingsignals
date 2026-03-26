@@ -1,0 +1,234 @@
+.contactInner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Disclaimer grid */
+.disclaimerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.disclaimerItem {
+  padding: 28px 24px;
+  background: var(--navy);
+  border: 1px solid var(--charcoal);
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.disclaimerItem:hover {
+  border-color: rgba(201, 169, 110, 0.2);
+}
+
+.disclaimerItem p {
+  font-size: 15px;
+  color: var(--steel);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.disclaimerIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(220, 80, 80, 0.1);
+  border: 1px solid rgba(220, 80, 80, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #dc5050;
+  flex-shrink: 0;
+}
+
+.disclaimerFooter {
+  font-size: 14px;
+  color: var(--steel);
+  opacity: 0.7;
+  line-height: 1.7;
+  text-align: center;
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* Contact card */
+.contactCard {
+  padding: 48px 40px;
+  background: linear-gradient(135deg, var(--navy), var(--slate));
+  border: 1px solid var(--charcoal);
+  border-radius: 4px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.contactCard:hover {
+  border-color: rgba(201, 169, 110, 0.25);
+}
+
+.contactCardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 22px;
+}
+
+.contactCard h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.emailLink {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--gold);
+  transition: color 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.emailLink:hover {
+  color: var(--ivory);
+}
+
+.formSection {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 48px);
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.formHeader h2 {
+  margin-bottom: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 14px 18px;
+  background: var(--midnight);
+  border: 1px solid var(--charcoal);
+  border-radius: 2px;
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: var(--steel);
+  opacity: 0.5;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: var(--gold);
+}
+
+.formGroup select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%238A95A9' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.formGroup select option {
+  background: var(--navy);
+  color: var(--ivory);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.formDisclaimer {
+  font-size: 13px;
+  color: var(--steel);
+  opacity: 0.6;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+.formSubmit {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.formSuccess {
+  text-align: center;
+  padding: 48px 32px;
+  background: rgba(201, 169, 110, 0.08);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: 4px;
+}
+
+.formSuccess h3 {
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.formSuccess p {
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  .disclaimerGrid {
+    grid-template-columns: 1fr;
+  }
+}

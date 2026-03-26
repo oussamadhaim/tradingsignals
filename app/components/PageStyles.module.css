@@ -1,0 +1,396 @@
+.pageHeader {
+  padding-top: calc(var(--header-height) + 80px);
+  padding-bottom: 80px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--midnight), var(--navy));
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHeader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(201, 169, 110, 0.04) 0%, transparent 60%);
+}
+
+.pageHeaderInner {
+  position: relative;
+  z-index: 1;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 48px);
+}
+
+.pageHeaderInner h1 {
+  margin-bottom: 24px;
+}
+
+.pageHeaderInner p {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(16px, 1.6vw, 19px);
+}
+
+/* Split Page Header */
+.pageHeaderSplit {
+  padding-top: calc(var(--header-height) + 80px);
+  padding-bottom: 80px;
+  background: linear-gradient(180deg, var(--midnight), var(--navy));
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHeaderSplit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(201, 169, 110, 0.04) 0%, transparent 60%);
+}
+
+.pageHeaderSplitInner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 48px);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.pageHeaderSplitText h1 {
+  margin-bottom: 24px;
+}
+
+.pageHeaderSplitText p {
+  font-size: clamp(16px, 1.6vw, 19px);
+  margin-bottom: 16px;
+  color: var(--ivory);
+}
+
+.whoWeServeImage {
+  height: 45vh;
+  min-height: 300px;
+  background-image: url('/who-we-serve-bg.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  border: 1px solid var(--charcoal);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.whoWeServeImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16, 24, 41, 0.6), rgba(42, 51, 71, 0.4)); /* Blue tint overlay to match standard aesthetics */
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .pageHeaderSplitInner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* Content section */
+.contentSection {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 48px);
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.splitGrid h3 {
+  margin-bottom: 20px;
+}
+
+.splitGrid p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Background image section for Quantitative Approach */
+.quantitativeBg {
+  background-color: var(--midnight);
+  position: relative;
+}
+
+.quantitativeBg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/quantitative-approach-bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1; /* 10% opacity */
+  z-index: 0;
+}
+
+.quantitativeBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 15, 28, 0.4); /* Blue overlay on top */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.quantitativeBg > div {
+  position: relative;
+  z-index: 2; /* Put content above overlays */
+}
+
+/* Background image section for Risk Management */
+.riskBg {
+  background-color: var(--midnight);
+  position: relative;
+}
+
+.riskBg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/risk-management-bg.webp');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6) contrast(1.1) grayscale(0.3);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.riskBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16, 24, 41, 0.8), rgba(42, 51, 71, 0.7)); /* Blue and slate gray overlay */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.riskBg > div {
+  position: relative;
+  z-index: 2;
+}
+
+/* Background image section for Who We Serve */
+.whoBg {
+  background-color: var(--midnight);
+  position: relative;
+}
+
+.whoBg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/who-we-serve-bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.whoBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16, 24, 41, 0.7), rgba(10, 15, 28, 0.8)); /* Deep navy overlay */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.whoBg > div {
+  position: relative;
+  z-index: 2;
+}
+
+/* Background image section for About */
+.aboutBg {
+  background-color: var(--midnight);
+  position: relative;
+}
+
+.aboutBg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/about-bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.aboutBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27, 36, 56, 0.6), rgba(16, 24, 41, 0.8)); /* Slate to navy overlay */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.aboutBg > div {
+  position: relative;
+  z-index: 2;
+}
+
+/* Timeline / Process */
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--gold), var(--charcoal), transparent);
+}
+
+.timelineItem {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.timelineMarker {
+  width: 49px;
+  min-width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  background: var(--midnight);
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--gold);
+  position: relative;
+  z-index: 1;
+}
+
+.timelineContent h3 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.timelineContent p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--steel);
+}
+
+/* Card Grid */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 48px);
+}
+
+.card {
+  padding: 40px 32px;
+  background: var(--navy);
+  border: 1px solid var(--charcoal);
+  border-radius: 4px;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.card:hover {
+  border-color: rgba(201, 169, 110, 0.2);
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: var(--gold);
+}
+
+/* Pull quote */
+.pullQuote {
+  border-left: 2px solid var(--gold);
+  padding: 24px 0 24px 32px;
+  margin: 48px 0;
+  max-width: 600px;
+}
+
+.pullQuote p {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--ivory);
+  line-height: 1.6;
+}
+
+/* CTA Band */
+.ctaBand {
+  text-align: center;
+  background: linear-gradient(180deg, var(--navy), var(--midnight));
+}
+
+.ctaBandInner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 48px);
+}
+
+.ctaBandInner h2 {
+  font-size: clamp(24px, 2.5vw, 36px);
+  margin-bottom: 24px;
+}
+
+.ctaBandInner p {
+  margin: 0 auto 40px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .splitGrid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}

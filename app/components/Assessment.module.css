@@ -1,0 +1,368 @@
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: overlayIn 0.3s ease-out;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal */
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, var(--navy), #0c1222);
+  border: 1px solid var(--charcoal);
+  border-radius: 8px;
+  padding: 48px 40px;
+  animation: modalIn 0.4s var(--ease-out-expo);
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--steel);
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+  padding: 4px;
+}
+
+.close:hover {
+  color: var(--ivory);
+}
+
+/* Progress */
+.progress {
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 2px;
+  background: var(--charcoal);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: width 0.5s var(--ease-out-expo);
+}
+
+.progressLabel {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--steel);
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+/* Step Content */
+.stepContent {
+  animation: stepIn 0.35s var(--ease-out-expo);
+}
+
+@keyframes stepIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.stepLabel {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.stepContent h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--ivory);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.stepContent h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--ivory);
+  margin-bottom: 16px;
+  margin-top: 28px;
+  line-height: 1.4;
+}
+
+.stepContent h3:first-of-type {
+  margin-top: 0;
+}
+
+.stepContent p {
+  font-size: 15px;
+  color: var(--steel);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.restricted {
+  font-style: italic;
+  color: var(--gold) !important;
+  opacity: 0.8;
+}
+
+.hint {
+  font-size: 13px !important;
+  opacity: 0.6;
+  margin-bottom: 12px !important;
+}
+
+/* Radio */
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(10, 15, 28, 0.6);
+  border: 1px solid var(--charcoal);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 15px;
+  color: var(--steel);
+}
+
+.radio:hover {
+  border-color: rgba(201, 169, 110, 0.3);
+  color: var(--ivory);
+}
+
+.radioSelected {
+  border-color: var(--gold) !important;
+  background: rgba(201, 169, 110, 0.06);
+  color: var(--ivory);
+}
+
+.radio input {
+  display: none;
+}
+
+.radioMark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--charcoal);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.radioSelected .radioMark {
+  border-color: var(--gold);
+}
+
+.radioSelected .radioMark::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* Checkbox */
+.checkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px;
+  background: rgba(10, 15, 28, 0.6);
+  border: 1px solid var(--charcoal);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 15px;
+  color: var(--steel);
+  line-height: 1.5;
+}
+
+.checkbox:hover {
+  border-color: rgba(201, 169, 110, 0.3);
+}
+
+.checkboxSelected {
+  border-color: var(--gold) !important;
+  background: rgba(201, 169, 110, 0.06);
+  color: var(--ivory);
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkMark {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1.5px solid var(--charcoal);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--gold);
+  transition: all 0.25s ease;
+  margin-top: 2px;
+}
+
+.checkboxSelected .checkMark {
+  border-color: var(--gold);
+  background: rgba(201, 169, 110, 0.15);
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  background: var(--gold);
+  color: var(--midnight);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.btn:hover {
+  background: var(--ivory);
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background: var(--gold);
+}
+
+/* Email section */
+.emailSection {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--charcoal);
+}
+
+.emailSection h3 {
+  margin-top: 0 !important;
+}
+
+.emailField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.emailField label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.emailField input {
+  padding: 14px 18px;
+  background: var(--midnight);
+  border: 1px solid var(--charcoal);
+  border-radius: 2px;
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.emailField input::placeholder {
+  color: var(--steel);
+  opacity: 0.5;
+}
+
+.emailField input:focus {
+  border-color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .modal {
+    padding: 32px 24px;
+    max-height: 95vh;
+  }
+}
