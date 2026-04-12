@@ -13,15 +13,25 @@
   gap: 60px;
 }
 
-.brand h3 {
-  font-family: var(--font-heading);
-  font-size: 22px;
-  color: var(--ivory);
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 16px;
 }
 
-.brand h3 span {
-  color: var(--gold);
+.logoWrapper h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--ivory);
+  margin-bottom: 0;
+}
+
+.logoImage {
+  display: block;
+  height: 64px;
+  width: auto;
+  object-fit: contain;
 }
 
 .brand p {
@@ -50,7 +60,8 @@
 }
 
 .column a {
-  font-size: 15px;
+  font-size: 13px;
+  letter-spacing: 0.15em;
   color: var(--steel);
   transition: color 0.3s ease;
 }

@@ -7,7 +7,7 @@
   gap: 48px;
 }
 
-/* Disclaimer grid */
+/* Disclaimer grid — matching home .notDoGrid */
 .disclaimerGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -15,8 +15,8 @@
 }
 
 .disclaimerItem {
-  padding: 28px 24px;
-  background: var(--navy);
+  padding: 32px 28px;
+  background: rgba(10, 15, 28, 0.6);
   border: 1px solid var(--charcoal);
   border-radius: 4px;
   text-align: center;
@@ -28,26 +28,26 @@
 }
 
 .disclaimerItem:hover {
-  border-color: rgba(201, 169, 110, 0.2);
+  border-color: rgba(220, 80, 80, 0.2);
 }
 
 .disclaimerItem p {
   font-size: 15px;
-  color: var(--steel);
+  color: var(--ivory);
   line-height: 1.6;
   margin: 0;
 }
 
 .disclaimerIcon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(220, 80, 80, 0.1);
   border: 1px solid rgba(220, 80, 80, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #dc5050;
   flex-shrink: 0;
 }
@@ -62,18 +62,38 @@
   padding: 0 20px;
 }
 
-/* Contact card */
+/* Contact card — matching home .pillar style */
 .contactCard {
   padding: 48px 40px;
-  background: linear-gradient(135deg, var(--navy), var(--slate));
+  background: linear-gradient(180deg, var(--navy), rgba(16, 24, 41, 0.5));
   border: 1px solid var(--charcoal);
   border-radius: 4px;
   text-align: center;
-  transition: border-color 0.3s ease;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.contactCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .contactCard:hover {
   border-color: rgba(201, 169, 110, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.contactCard:hover::before {
+  opacity: 1;
 }
 
 .contactCardIcon {
@@ -106,6 +126,7 @@
   color: var(--ivory);
 }
 
+/* Form section */
 .formSection {
   max-width: 680px;
   margin: 0 auto;
@@ -157,7 +178,7 @@
   color: var(--ivory);
   font-family: var(--font-body);
   font-size: 16px;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
   outline: none;
 }
 
@@ -171,6 +192,7 @@
 .formGroup select:focus,
 .formGroup textarea:focus {
   border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.1);
 }
 
 .formGroup select {
@@ -210,9 +232,21 @@
 .formSuccess {
   text-align: center;
   padding: 48px 32px;
-  background: rgba(201, 169, 110, 0.08);
-  border: 1px solid rgba(201, 169, 110, 0.2);
+  background: rgba(201, 169, 110, 0.06);
+  border: 1px solid rgba(201, 169, 110, 0.15);
   border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.formSuccess::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.25), transparent);
 }
 
 .formSuccess h3 {

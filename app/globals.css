@@ -105,6 +105,27 @@ img {
 
 .section--alt {
   background-color: var(--navy);
+  position: relative;
+}
+
+.section--alt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.06), transparent);
+}
+
+.section--alt::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.06), transparent);
 }
 
 .gold-text {

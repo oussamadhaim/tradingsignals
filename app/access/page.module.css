@@ -4,79 +4,10 @@
   padding: 0 clamp(24px, 4vw, 48px);
 }
 
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.step {
-  text-align: center;
-  padding: 40px 28px;
-  position: relative;
-}
-
-.stepNumber {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px;
-  font-family: var(--font-heading);
-  font-size: 22px;
-  color: var(--gold);
-}
-
-.step h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.step p {
-  font-size: 15px;
-  color: var(--steel);
-  line-height: 1.7;
-  margin: 0 auto;
-  max-width: 300px;
-}
-
-/* Support List */
-.supportList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.supportList li {
-  padding-left: 24px;
-  position: relative;
-  color: var(--ivory);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.supportList li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--gold);
-}
-
-.supportDisclaimer {
-  font-style: italic;
-  opacity: 0.7;
-}
-
 /* Economic Structure */
 .economicHighlight {
   padding: 24px 32px;
-  background: rgba(201, 169, 110, 0.08);
+  background: rgba(201, 169, 110, 0.06);
   border-left: 2px solid var(--gold);
   border-radius: 0 4px 4px 0;
   font-size: 18px;
@@ -84,27 +15,75 @@
   color: var(--ivory);
   margin: 24px 0;
   line-height: 1.6;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Access Process Steps */
+.economicHighlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(201, 169, 110, 0.1), transparent);
+}
+
+/* Access Process Steps — matching home .accessStep style */
 .processSteps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 48px);
 }
 
 .processStep {
   text-align: center;
-  padding: 40px 24px;
-  background: var(--navy);
+  padding: 48px 28px;
+  background: linear-gradient(180deg, var(--navy), rgba(16, 24, 41, 0.5));
   border: 1px solid var(--charcoal);
   border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.processStep::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .processStep:hover {
   border-color: rgba(201, 169, 110, 0.25);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.processStep:hover::before {
+  opacity: 1;
+}
+
+.stepNumber {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--gold);
 }
 
 .processStep h3 {
@@ -121,7 +100,8 @@
 
 .processNote {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 48px;
+  padding: 0 clamp(24px, 4vw, 48px);
 }
 
 .processNote p {
@@ -131,6 +111,8 @@
   opacity: 0.7;
 }
 
+/* Support List — now uses shared .styledList from PageStyles */
+
 /* Responsive */
 @media (max-width: 1024px) {
   .processSteps {
@@ -139,11 +121,6 @@
 }
 
 @media (max-width: 768px) {
-  .steps {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
   .processSteps {
     grid-template-columns: 1fr;
   }

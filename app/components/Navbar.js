@@ -45,7 +45,7 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
-          TRADING<span>SIGNALS</span>
+          <img src="/meritaq-logo.svg" alt="MERITAQ Logo" className={styles.logoImage} />
         </Link>
 
         <nav className={styles.nav}>

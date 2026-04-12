@@ -117,6 +117,36 @@
   margin-bottom: 0;
 }
 
+.overviewList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.overviewList li {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--ivory);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+.overviewList li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 28px;
+  line-height: 1;
+  top: 2px;
+}
+
 .fullWidth {
   width: 100%;
 }
@@ -353,70 +383,24 @@
   margin: 0;
 }
 
-/* Approach / Pillars Section */
-.approach {
-  background-color: var(--midnight);
-}
-
-.approachHeader {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 80px;
-}
-
-.approachHeader h2 {
-  margin-bottom: 24px;
-}
-
-.approachHeader p {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.pillars {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 clamp(24px, 4vw, 48px);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.pillar {
-  background: linear-gradient(180deg, var(--navy), rgba(16, 24, 41, 0.5));
-  border: 1px solid var(--charcoal);
-  border-radius: 4px;
-  padding: 48px 36px;
-  transition: all 0.4s var(--ease-out-expo);
-}
-
-.pillar:hover {
-  border-color: rgba(201, 169, 110, 0.25);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-}
-
-.pillarIcon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--gold-light);
+.approachList {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 28px;
-  font-size: 20px;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
 }
 
-.pillar h3 {
-  margin-bottom: 16px;
+.approachItem h3 {
   font-size: 22px;
+  color: var(--gold);
+  margin-bottom: 12px;
 }
 
-.pillar p {
-  font-size: 16px;
+.approachItem p {
   color: var(--steel);
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Why Quantitative Section */
@@ -743,7 +727,7 @@
 }
 
 .closing h2 {
-  font-size: clamp(24px, 2.5vw, 36px);
+  font-size: clamp(20px, 2vw, 28px);
   font-weight: 400;
   font-style: italic;
   color: var(--gold);

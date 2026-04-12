@@ -1,4 +1,4 @@
-import styles from '../components/PageStyles.module.css';
+import homeStyles from '../page.module.css';
 import SectionReveal from '../components/SectionReveal';
 import Button from '../components/Button';
 
@@ -10,155 +10,156 @@ export const metadata = {
 export default function RiskManagement() {
   return (
     <>
-      <section className={`${styles.pageHeader} ${styles.riskBg}`}>
-        <div className={styles.pageHeaderInner}>
-          <span className="label">Risk Management</span>
-          <h1>Risk Management</h1>
-          <p>
+      {/* ========== HERO ========== */}
+      <section className={homeStyles.hero} style={{ minHeight: '60vh', padding: '120px 24px 60px' }}>
+        <div 
+          className={homeStyles.heroBg} 
+          style={{ backgroundImage: "url('/risk-management-bg.webp')", opacity: 0.1 }}
+        ></div>
+        <div className={homeStyles.heroContent}>
+          <p className={homeStyles.heroLabel} style={{ opacity: 1, animation: 'none' }}>Risk Management</p>
+          <h1 className={homeStyles.heroTitle} style={{ fontSize: '42px', fontWeight: 500, lineHeight: 1.2, margin: '0 0 24px 0', opacity: 1, animation: 'none' }}>
+            Risk Management
+          </h1>
+          <p className={homeStyles.heroSub} style={{ fontSize: '18px', lineHeight: 1.6, margin: '0 auto 24px', opacity: 1, animation: 'none' }}>
             Risk is an inherent component of any market activity and cannot be eliminated.
           </p>
-          <p>
+          <p className={homeStyles.heroSub} style={{ fontSize: '18px', lineHeight: 1.6, margin: '0 auto', opacity: 1, animation: 'none' }}>
             The approach is therefore structured around managing risk through 
             predefined rules, model design, and operational discipline.
           </p>
         </div>
       </section>
 
-      <section className="section">
-        <div className={styles.contentSection}>
+      {/* ========== EMBEDDED RISK STRUCTURE ========== */}
+      <section className="section" style={{ padding: '50px 0' }}>
+        <div className={homeStyles.overviewInner}>
           <SectionReveal>
-            <div className={styles.splitGrid}>
-              <div>
-                <span className="label">Structure</span>
-                <h2>Embedded Risk Structure</h2>
-                <p>
-                  Each strategy incorporates internal risk parameters, including 
-                  exposure control, position sizing logic, and operational constraints.
-                </p>
-                <p>
-                  These elements are defined at the model level and applied 
-                  consistently through automated execution.
-                </p>
-              </div>
-              <div className={styles.abstractVisual}>
-                <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="40" y="40" width="320" height="320" stroke="rgba(201,169,110,0.15)" strokeWidth="1"/>
-                  <path d="M40 360L160 200L240 280L360 40" stroke="rgba(201,169,110,0.4)" strokeWidth="2" strokeLinejoin="round"/>
-                  <line x1="160" y1="200" x2="160" y2="360" stroke="rgba(201,169,110,0.1)" strokeWidth="1" strokeDasharray="4 4"/>
-                  <line x1="240" y1="280" x2="240" y2="360" stroke="rgba(201,169,110,0.1)" strokeWidth="1" strokeDasharray="4 4"/>
-                </svg>
-              </div>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '26px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 16px 0' }}>Embedded Risk Structure</h2>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                Each strategy incorporates internal risk parameters, including 
+                exposure control, position sizing logic, and operational constraints.
+              </p>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: 0 }}>
+                These elements are defined at the model level and applied 
+                consistently through automated execution.
+              </p>
             </div>
           </SectionReveal>
         </div>
       </section>
 
-      <section className="section section--alt">
-        <div className={styles.contentSection}>
+      {/* ========== DIVERSIFICATION ========== */}
+      <section className="section section--alt" style={{ padding: '50px 0' }}>
+        <div className={homeStyles.overviewInner}>
           <SectionReveal>
-            <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-              <span className="label">Diversification</span>
-              <h2>Diversification Across Strategies</h2>
-              <p>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '26px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 16px 0' }}>Diversification Across Strategies</h2>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 24px 0' }}>
                 Risk is managed not only at the single strategy level, but also 
                 through the use of multiple models operating across different 
                 instruments and conditions.
               </p>
-              <p>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: 0 }}>
                 This contributes to reducing concentration and improving overall 
                 structural balance.
               </p>
-              <div className="divider" style={{ margin: '48px auto' }}></div>
             </div>
           </SectionReveal>
         </div>
       </section>
 
-      <section className="section">
-        <div className={styles.contentSection}>
+      {/* ========== SYSTEMATIC DISCIPLINE ========== */}
+      <section className="section" style={{ padding: '50px 0' }}>
+        <div className={homeStyles.overviewInner}>
           <SectionReveal>
-            <div className={styles.cardGrid}>
-              <div className={styles.card}>
-                <div className={styles.cardIcon}>⚙️</div>
-                <h3>Systematic Discipline</h3>
-                <p>
-                  The absence of discretionary intervention ensures that strategies 
-                  operate within their defined parameters.
-                </p>
-                <p>
-                  This avoids deviations driven by emotional or subjective decision-making.
-                </p>
-              </div>
-              <div className={styles.card}>
-                <div className={styles.cardIcon}>⚖️</div>
-                <h3>Leverage Considerations</h3>
-                <p>
-                  Where applicable, financial leverage may be used as part of the operational environment.
-                </p>
-                <p>
-                  Leverage is treated as a technical component and not as an objective, 
-                  and its impact depends on the user&apos;s account configuration.
-                </p>
-              </div>
-              <div className={styles.card}>
-                <div className={styles.cardIcon}>📊</div>
-                <h3>Monitoring and Adaptation</h3>
-                <p>
-                  Strategies are subject to ongoing observation and review to ensure 
-                  alignment with their intended design.
-                </p>
-                <p>
-                  Adjustments, where necessary, are applied within the structured 
-                  framework of the models.
-                </p>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      <section className="section section--alt">
-        <div className={styles.contentSection}>
-          <SectionReveal>
-            <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-              <span className="label">Control</span>
-              <h2>User Control</h2>
-              <p>
-                All strategies are executed directly on the user&apos;s account.
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '26px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 16px 0' }}>Systematic Discipline</h2>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                The absence of discretionary intervention ensures that strategies 
+                operate within their defined parameters.
               </p>
-              <p>The user retains full control over:</p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '24px 0 32px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <li style={{ paddingLeft: '24px', position: 'relative', color: 'var(--ivory)', fontSize: '16px', lineHeight: '1.6' }}>
-                  <span style={{ position: 'absolute', left: 0, color: 'var(--gold)' }}>—</span>
-                  capital allocation
-                </li>
-                <li style={{ paddingLeft: '24px', position: 'relative', color: 'var(--ivory)', fontSize: '16px', lineHeight: '1.6' }}>
-                  <span style={{ position: 'absolute', left: 0, color: 'var(--gold)' }}>—</span>
-                  activation or deactivation of strategies
-                </li>
-                <li style={{ paddingLeft: '24px', position: 'relative', color: 'var(--ivory)', fontSize: '16px', lineHeight: '1.6' }}>
-                  <span style={{ position: 'absolute', left: 0, color: 'var(--gold)' }}>—</span>
-                  overall exposure
-                </li>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: 0 }}>
+                This avoids deviations driven by emotional or subjective decision-making.
+              </p>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
+      {/* ========== LEVERAGE CONSIDERATIONS ========== */}
+      <section className="section section--alt" style={{ padding: '50px 0' }}>
+        <div className={homeStyles.overviewInner}>
+          <SectionReveal>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '26px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 16px 0' }}>Leverage Considerations</h2>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                Where applicable, financial leverage may be used as part of the operational environment.
+              </p>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: 0 }}>
+                Leverage is treated as a technical component and not as an objective, 
+                and its impact depends on the user's account configuration.
+              </p>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
+      {/* ========== MONITORING ========== */}
+      <section className="section" style={{ padding: '50px 0' }}>
+        <div className={homeStyles.overviewInner}>
+          <SectionReveal>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '26px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 16px 0' }}>Monitoring and Adaptation</h2>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                Strategies are subject to ongoing observation and review to ensure 
+                alignment with their intended design.
+              </p>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: 0 }}>
+                Adjustments, where necessary, are applied within the structured 
+                framework of the models.
+              </p>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
+      {/* ========== USER CONTROL ========== */}
+      <section className="section section--alt" style={{ padding: '50px 0' }}>
+        <div className={homeStyles.overviewInner} style={{ alignItems: 'flex-start', textAlign: 'left' }}>
+          <SectionReveal>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '26px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 16px 0' }}>User Control</h2>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                All strategies are executed directly on the user's account.
+              </p>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 16px 0' }}>The user retains full control over:</p>
+              <ul className={homeStyles.overviewList} style={{ gap: '12px', width: '100%' }}>
+                <li>capital allocation</li>
+                <li>activation or deactivation of strategies</li>
+                <li>overall exposure</li>
               </ul>
             </div>
           </SectionReveal>
         </div>
       </section>
 
-      <section className={`section ${styles.ctaBand}`}>
-        <SectionReveal>
-          <div className={styles.ctaBandInner}>
-            <span className="label" style={{ marginBottom: '16px', display: 'inline-block' }}>Key Principle</span>
-            <h2>
-              The priority is not the maximization of short-term results, but 
-              the preservation of consistency and structural coherence over time.
-            </h2>
-            <div style={{ marginTop: '40px' }}>
-              <Button href="/who-its-for">Who We Serve</Button>
+      {/* ========== KEY PRINCIPLE ========== */}
+      <section className={`section ${homeStyles.ctaBand}`} style={{ paddingBottom: '120px', paddingTop: '50px' }}>
+        <div className={homeStyles.overviewInner}>
+          <SectionReveal>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '28px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 20px 0' }}>
+                The priority is not the maximization of short-term results, but 
+                the preservation of consistency and structural coherence over time.
+              </h2>
+              <div style={{ marginTop: '20px' }}>
+                <Button href="/who-its-for">Who This Is For</Button>
+              </div>
             </div>
-          </div>
-        </SectionReveal>
+          </SectionReveal>
+        </div>
       </section>
     </>
   );

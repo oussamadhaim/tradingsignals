@@ -8,9 +8,11 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brand}>
-          <h3>TRADING<span>SIGNALS</span></h3>
+          <div className={styles.logoWrapper}>
+            <img src="/meritaq-logo.svg" alt="MERITAQ Logo" className={styles.logoImage} />
+          </div>
           <p>
-            Proprietary quantitative strategies designed for institutional-grade 
+            Proprietary quantitative strategies for structured 
             portfolio diversification. Systematic. Risk-managed. Selective.
           </p>
         </div>
@@ -21,7 +23,7 @@ export default function Footer() {
             <li><Link href="/quantitative-approach">Quantitative Approach</Link></li>
             <li><Link href="/risk-management">Risk Management</Link></li>
             <li><Link href="/who-its-for">Who We Serve</Link></li>
-            <li><Link href="/access">Access Strategies</Link></li>
+            <li><Link href="/access">Access</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
@@ -30,8 +32,8 @@ export default function Footer() {
         <div className={styles.column}>
           <h4>Contact</h4>
           <ul>
-            <li><Link href="/access">Preliminary Assessment</Link></li>
-            <li><a href="mailto:contact@tradingsignals.com">contact@tradingsignals.com</a></li>
+            <li><Link href="/access">Request a Preliminary Assessment</Link></li>
+            <li><a href="mailto:contact@meritaq.com">contact@meritaq.com</a></li>
           </ul>
         </div>
       </div>
@@ -42,12 +44,10 @@ export default function Footer() {
         <Link href="/privacy-policy">Privacy Policy</Link>
         <span className={styles.legalSep}>·</span>
         <Link href="/cookie-policy">Cookie Policy</Link>
-        <span className={styles.legalSep}>·</span>
-        <Link href="/contact">Contact</Link>
       </div>
 
       <div className={styles.bottom}>
-        <p className={styles.copyright}>&copy; {currentYear} TradingSignals. All rights reserved.</p>
+        <p className={styles.copyright}>&copy; {currentYear} MERITAQ. All rights reserved.</p>
         <p className={styles.disclaimer}>
           This website is for informational purposes only and does not constitute an offer, 
           solicitation, or recommendation to invest. Past performance is not indicative of 

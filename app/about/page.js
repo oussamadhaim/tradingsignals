@@ -1,6 +1,7 @@
-import styles from '../components/PageStyles.module.css';
+import homeStyles from '../page.module.css';
 import SectionReveal from '../components/SectionReveal';
 import Button from '../components/Button';
+import AssessmentTrigger from '../components/AssessmentTrigger';
 
 export const metadata = {
   title: 'About | TradingSignals',
@@ -10,101 +11,77 @@ export const metadata = {
 export default function About() {
   return (
     <>
-      {/* Header */}
-      <section className={`${styles.pageHeader} ${styles.aboutBg}`}>
-        <div className={styles.pageHeaderInner}>
-          <span className="label">About</span>
-          <h1>About</h1>
-          <p>
+      {/* ========== HERO ========== */}
+      <section className={homeStyles.hero} style={{ minHeight: '50vh', padding: '120px 24px 60px' }}>
+        <div 
+          className={homeStyles.heroBg} 
+          style={{ backgroundImage: "url('/about-bg.png')", opacity: 0.1 }}
+        ></div>
+        <div className={homeStyles.heroContent}>
+          <p className={homeStyles.heroLabel} style={{ opacity: 1, animation: 'none' }}>About us</p>
+          <h1 className={homeStyles.heroTitle} style={{ fontSize: '42px', fontWeight: 500, lineHeight: 1.2, margin: '0 0 24px 0', opacity: 1, animation: 'none' }}>
+            About
+          </h1>
+          <p className={homeStyles.heroSub} style={{ fontSize: '18px', lineHeight: 1.6, margin: '0 auto 24px', opacity: 1, animation: 'none' }}>
             The activity is focused on the research, development, and ongoing refinement of 
             quantitative strategies based on mathematical modeling, statistical analysis, 
             and data-driven processes.
           </p>
-          <p>
+          <p className={homeStyles.heroSub} style={{ fontSize: '18px', lineHeight: 1.6, margin: '0 auto', opacity: 1, animation: 'none' }}>
             The objective is to provide structured, systematic frameworks that enable 
             multi-instrument market exposure in a consistent and controlled manner.
           </p>
         </div>
       </section>
 
-      {/* Operations */}
-      <section className="section">
-        <div className={styles.contentSection}>
+      {/* ========== OPERATIONAL TOOLS ========== */}
+      <section className="section" style={{ padding: '50px 0' }}>
+        <div className={homeStyles.overviewInner} style={{ alignItems: 'flex-start', textAlign: 'left' }}>
           <SectionReveal>
-            <div className={styles.splitGrid}>
-              <div>
-                <span className="label">Operations</span>
-                <h2>Operational Tools</h2>
-                <p>
-                  Strategies are made available as operational tools, which users deploy independently on their own trading accounts.
-                </p>
-                <p>
-                  The company does not provide portfolio management, financial advisory, or brokerage services.
-                </p>
-                <p>
-                  All operations are executed directly on the user&apos;s account through automated systems, ensuring full user control at all times.
-                </p>
-              </div>
-              <div className={styles.abstractVisual}>
-                <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="40" y="40" width="320" height="320" stroke="rgba(201,169,110,0.15)" strokeWidth="1"/>
-                  <circle cx="200" cy="200" r="120" stroke="rgba(201,169,110,0.12)" strokeWidth="1"/>
-                  <circle cx="200" cy="200" r="80" stroke="rgba(201,169,110,0.08)" strokeWidth="1"/>
-                  <line x1="200" y1="40" x2="200" y2="360" stroke="rgba(201,169,110,0.06)" strokeWidth="1"/>
-                  <line x1="40" y1="200" x2="360" y2="200" stroke="rgba(201,169,110,0.06)" strokeWidth="1"/>
-                </svg>
-              </div>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '26px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 16px 0' }}>Operational Tools</h2>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                Strategies are made available as operational tools, which users deploy independently on their own trading accounts.
+              </p>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 24px 0' }}>
+                The company does not provide portfolio management, financial advisory, or brokerage services.
+              </p>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: 0 }}>
+                All operations are executed directly on the user's account through automated systems, ensuring full user control at all times.
+              </p>
             </div>
           </SectionReveal>
         </div>
       </section>
 
-      {/* Role */}
-      <section className="section section--alt">
-        <div className={styles.contentSection}>
+      {/* ========== ROLE OF THE COMPANY ========== */}
+      <section className="section section--alt" style={{ padding: '50px 0' }}>
+        <div className={homeStyles.overviewInner} style={{ alignItems: 'flex-start', textAlign: 'left' }}>
           <SectionReveal>
-            <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-              <span className="label">Scope</span>
-              <h2>Role of the Company</h2>
-              <p style={{ margin: '0 auto' }}>
-                The role of the company is limited to:
-              </p>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '26px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 16px 0' }}>Role of the Company</h2>
+              <p style={{ fontSize: '17px', lineHeight: 1.6, margin: '0 0 24px 0' }}>The role of the company is limited to:</p>
+              <ul className={homeStyles.overviewList} style={{ gap: '16px' }}>
+                <li>strategy design and development</li>
+                <li>model maintenance and refinement</li>
+                <li>technical support for setup and connectivity</li>
+              </ul>
             </div>
           </SectionReveal>
-          <div className={styles.cardGrid}>
-            <SectionReveal delay={1}>
-              <div className={styles.card}>
-                <div className={styles.cardIcon}>①</div>
-                <h3>strategy design and development</h3>
-              </div>
-            </SectionReveal>
-            <SectionReveal delay={2}>
-              <div className={styles.card}>
-                <div className={styles.cardIcon}>②</div>
-                <h3>model maintenance and refinement</h3>
-              </div>
-            </SectionReveal>
-            <SectionReveal delay={3}>
-              <div className={styles.card}>
-                <div className={styles.cardIcon}>③</div>
-                <h3>technical support for setup and connectivity</h3>
-              </div>
-            </SectionReveal>
-          </div>
         </div>
       </section>
 
-      {/* Approach & Disclaimer */}
-      <section className="section">
-        <div className={styles.contentSection}>
+      {/* ========== APPROACH & DISCLAIMER ========== */}
+      <section className="section" style={{ padding: '50px 0' }}>
+        <div className={homeStyles.overviewInner} style={{ alignItems: 'flex-start', textAlign: 'left' }}>
           <SectionReveal>
-            <div className={styles.pullQuote} style={{ marginBottom: '48px' }}>
-              <p>
-                The approach is based on structure, discipline, and repeatability, rather than discretionary decision-making or market prediction.
-              </p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '14px', color: 'var(--steel)', fontStyle: 'italic', maxWidth: '600px', margin: '0 auto' }}>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <div style={{ borderLeft: '2px solid var(--gold)', paddingLeft: '24px', margin: '16px 0 32px 16px' }}>
+                <p style={{ fontSize: '24px', lineHeight: 1.4, margin: 0, fontWeight: 500, color: 'var(--ivory)' }}>
+                  The approach is based on structure, discipline, and repeatability, rather than discretionary decision-making or market prediction.
+                </p>
+              </div>
+              <p style={{ fontSize: '15px', color: 'var(--steel)', fontStyle: 'italic', margin: 0 }}>
                 The strategies are intended as operational tools and do not constitute investment recommendations.
               </p>
             </div>
@@ -112,14 +89,18 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className={`section ${styles.ctaBand}`}>
-        <SectionReveal>
-          <div className={styles.ctaBandInner}>
-            <h2>Request Access to Our Strategies</h2>
-            <Button href="/access">Request Access</Button>
-          </div>
-        </SectionReveal>
+      {/* ========== CTA ========== */}
+      <section className={`section ${homeStyles.ctaBand}`} style={{ paddingBottom: '120px', paddingTop: '50px' }}>
+        <div className={homeStyles.overviewInner} style={{ alignItems: 'flex-start', textAlign: 'left' }}>
+          <SectionReveal>
+            <div className={homeStyles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ fontSize: '28px', fontWeight: 500, lineHeight: 1.3, margin: '0 0 20px 0' }}>Request Access to Our Strategies</h2>
+              <div style={{ marginTop: '20px' }}>
+                <AssessmentTrigger>Request a Preliminary Assessment</AssessmentTrigger>
+              </div>
+            </div>
+          </SectionReveal>
+        </div>
       </section>
     </>
   );

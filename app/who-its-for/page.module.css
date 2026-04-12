@@ -1,3 +1,16 @@
+/* Who We Serve — Page-level overrides */
+.whoPage :global(.section) {
+  padding: 100px 0;
+}
+
+.whoPage h2 {
+  margin-bottom: 20px;
+}
+
+.whoPage h3 {
+  margin-bottom: 20px;
+}
+
 .quizSection {
   max-width: 700px;
   margin: 0 auto;

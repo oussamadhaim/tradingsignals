@@ -1,3 +1,8 @@
+/* ============================================
+   PAGE STYLES — Unified design matching Home
+   ============================================ */
+
+/* Page Header — Centered */
 .pageHeader {
   padding-top: calc(var(--header-height) + 80px);
   padding-bottom: 80px;
@@ -14,6 +19,16 @@
   background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(201, 169, 110, 0.04) 0%, transparent 60%);
 }
 
+.pageHeader::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.15), transparent);
+}
+
 .pageHeaderInner {
   position: relative;
   z-index: 1;
@@ -24,12 +39,33 @@
 
 .pageHeaderInner h1 {
   margin-bottom: 24px;
+  opacity: 0;
+  animation: pageHeaderFadeUp 0.8s 0.2s var(--ease-out-expo) forwards;
 }
 
 .pageHeaderInner p {
   margin-left: auto;
   margin-right: auto;
   font-size: clamp(16px, 1.6vw, 19px);
+  opacity: 0;
+  animation: pageHeaderFadeUp 0.8s 0.4s var(--ease-out-expo) forwards;
+}
+
+.pageHeaderInner .label,
+.pageHeaderInner > span {
+  opacity: 0;
+  animation: pageHeaderFadeUp 0.8s 0.1s var(--ease-out-expo) forwards;
+}
+
+@keyframes pageHeaderFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Split Page Header */
@@ -46,6 +82,16 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(201, 169, 110, 0.04) 0%, transparent 60%);
+}
+
+.pageHeaderSplit::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.15), transparent);
 }
 
 .pageHeaderSplitInner {
@@ -87,7 +133,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(16, 24, 41, 0.6), rgba(42, 51, 71, 0.4)); /* Blue tint overlay to match standard aesthetics */
+  background: linear-gradient(135deg, rgba(16, 24, 41, 0.6), rgba(42, 51, 71, 0.4));
   pointer-events: none;
 }
 
@@ -98,18 +144,59 @@
   }
 }
 
-/* Content section */
+/* ============================================
+   CONTENT SECTIONS
+   ============================================ */
+
 .contentSection {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 clamp(24px, 4vw, 48px);
 }
 
+/* Alternating section backgrounds to match home */
+.sectionDark {
+  background-color: var(--midnight);
+}
+
+.sectionAlt {
+  background-color: var(--navy);
+  position: relative;
+}
+
+.sectionAlt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.08), transparent);
+}
+
+.sectionAlt::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.08), transparent);
+}
+
+/* ============================================
+   SPLIT GRID — Matching home splitLayout
+   ============================================ */
+
 .splitGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: start;
+  align-items: center;
+}
+
+.splitGrid h2 {
+  margin-bottom: 32px;
 }
 
 .splitGrid h3 {
@@ -121,7 +208,30 @@
   line-height: 1.8;
 }
 
-/* Background image section for Quantitative Approach */
+/* Abstract Visual — SVG container */
+.abstractVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+.abstractVisual:hover {
+  opacity: 1;
+}
+
+.abstractVisual svg {
+  width: 100%;
+  max-width: 360px;
+  filter: drop-shadow(0 0 20px rgba(201, 169, 110, 0.05));
+}
+
+/* ============================================
+   BG IMAGE SECTIONS — Page hero backgrounds
+   ============================================ */
+
+/* Quantitative Approach */
 .quantitativeBg {
   background-color: var(--midnight);
   position: relative;
@@ -134,7 +244,7 @@
   background-image: url('/quantitative-approach-bg.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.1; /* 10% opacity */
+  opacity: 0.1;
   z-index: 0;
 }
 
@@ -142,17 +252,17 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(10, 15, 28, 0.4); /* Blue overlay on top */
+  background-color: rgba(10, 15, 28, 0.4);
   z-index: 1;
   pointer-events: none;
 }
 
 .quantitativeBg > div {
   position: relative;
-  z-index: 2; /* Put content above overlays */
+  z-index: 2;
 }
 
-/* Background image section for Risk Management */
+/* Risk Management */
 .riskBg {
   background-color: var(--midnight);
   position: relative;
@@ -174,7 +284,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(16, 24, 41, 0.8), rgba(42, 51, 71, 0.7)); /* Blue and slate gray overlay */
+  background: linear-gradient(135deg, rgba(16, 24, 41, 0.8), rgba(42, 51, 71, 0.7));
   z-index: 1;
   pointer-events: none;
 }
@@ -184,7 +294,7 @@
   z-index: 2;
 }
 
-/* Background image section for Who We Serve */
+/* Who We Serve */
 .whoBg {
   background-color: var(--midnight);
   position: relative;
@@ -205,7 +315,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(16, 24, 41, 0.7), rgba(10, 15, 28, 0.8)); /* Deep navy overlay */
+  background: linear-gradient(135deg, rgba(16, 24, 41, 0.7), rgba(10, 15, 28, 0.8));
   z-index: 1;
   pointer-events: none;
 }
@@ -215,7 +325,7 @@
   z-index: 2;
 }
 
-/* Background image section for About */
+/* About */
 .aboutBg {
   background-color: var(--midnight);
   position: relative;
@@ -236,7 +346,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(27, 36, 56, 0.6), rgba(16, 24, 41, 0.8)); /* Slate to navy overlay */
+  background: linear-gradient(135deg, rgba(27, 36, 56, 0.6), rgba(16, 24, 41, 0.8));
   z-index: 1;
   pointer-events: none;
 }
@@ -246,7 +356,107 @@
   z-index: 2;
 }
 
-/* Timeline / Process */
+/* ============================================
+   CARD GRID — Matching home .pillar style
+   ============================================ */
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 48px);
+}
+
+.card {
+  padding: 48px 36px;
+  background: linear-gradient(180deg, var(--navy), rgba(16, 24, 41, 0.5));
+  border: 1px solid var(--charcoal);
+  border-radius: 4px;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover {
+  border-color: rgba(201, 169, 110, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.card p {
+  font-size: 16px;
+  color: var(--steel);
+  line-height: 1.7;
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  font-size: 20px;
+  color: var(--gold);
+}
+
+/* ============================================
+   STYLED LIST — Matching home .methodList
+   ============================================ */
+
+.styledList {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.styledList li {
+  padding-left: 24px;
+  position: relative;
+  color: var(--ivory);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.styledList li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* ============================================
+   TIMELINE / PROCESS
+   ============================================ */
+
 .timeline {
   max-width: 800px;
   margin: 0 auto;
@@ -298,58 +508,26 @@
   color: var(--steel);
 }
 
-/* Card Grid */
-.cardGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 clamp(24px, 4vw, 48px);
-}
+/* ============================================
+   PULL QUOTE — Matching home style
+   ============================================ */
 
-.card {
-  padding: 40px 32px;
-  background: var(--navy);
-  border: 1px solid var(--charcoal);
-  border-radius: 4px;
-  transition: all 0.4s var(--ease-out-expo);
-}
-
-.card:hover {
-  border-color: rgba(201, 169, 110, 0.2);
-  transform: translateY(-3px);
-}
-
-.card h3 {
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-.card p {
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.cardIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--gold-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  font-size: 18px;
-  color: var(--gold);
-}
-
-/* Pull quote */
 .pullQuote {
   border-left: 2px solid var(--gold);
   padding: 24px 0 24px 32px;
   margin: 48px 0;
   max-width: 600px;
+  position: relative;
+}
+
+.pullQuote::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold), rgba(201, 169, 110, 0.3));
 }
 
 .pullQuote p {
@@ -360,20 +538,92 @@
   line-height: 1.6;
 }
 
-/* CTA Band */
+/* ============================================
+   SECTION HEADER — Centered section intros
+   ============================================ */
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 64px;
+}
+
+.sectionHeader h2 {
+  margin-bottom: 24px;
+}
+
+.sectionHeader p {
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--steel);
+}
+
+/* ============================================
+   HIGHLIGHT BOX — For key notes
+   ============================================ */
+
+.highlightBox {
+  padding: 32px 40px;
+  background: rgba(201, 169, 110, 0.06);
+  border: 1px solid rgba(201, 169, 110, 0.12);
+  border-radius: 4px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlightBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.25), transparent);
+}
+
+.highlightBox p {
+  font-size: 18px;
+  color: var(--ivory);
+  line-height: 1.8;
+  margin: 0 auto;
+}
+
+/* ============================================
+   CTA BAND — Matching home .closing style
+   ============================================ */
+
 .ctaBand {
   text-align: center;
   background: linear-gradient(180deg, var(--navy), var(--midnight));
+  position: relative;
+}
+
+.ctaBand::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 .ctaBandInner {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 0 clamp(24px, 4vw, 48px);
 }
 
 .ctaBandInner h2 {
   font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 1.5;
   margin-bottom: 24px;
 }
 
@@ -381,11 +631,32 @@
   margin: 0 auto 40px;
 }
 
-/* Responsive */
+/* ============================================
+   DISCLAIMER NOTE
+   ============================================ */
+
+.disclaimerNote {
+  font-size: 14px;
+  color: var(--steel);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
 @media (max-width: 1024px) {
   .splitGrid {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

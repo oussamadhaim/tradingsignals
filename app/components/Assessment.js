@@ -109,7 +109,7 @@ export default function Assessment({ onClose }) {
             <p>
               This process takes less than one minute to complete.
             </p>
-            <button className={styles.btn} onClick={next}>Start</button>
+            <button className={styles.btn} onClick={next}>Start Assessment</button>
           </div>
         )}
 

@@ -28,7 +28,7 @@ export default function Home() {
           </p>
           <div className={styles.heroCta}>
             <button className={styles.heroBtn} onClick={() => setShowAssessment(true)}>
-              <span>Submit a Request for Preliminary Assessment</span>
+              <span>Request a Preliminary Assessment</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -46,15 +46,11 @@ export default function Home() {
         <div className={styles.overviewInner}>
           <SectionReveal>
             <div className={styles.overviewText}>
-              <span className="label">Overview</span>
-              <p className={styles.overviewLead}>
-                The access model is structured to align with the effective use of the strategies.
-              </p>
-              <div className={styles.overviewDesc}>
-                <p>
-                  No upfront fees are required, and the economic framework reflects actual utilization.
-                </p>
-              </div>
+              <ul className={styles.overviewList}>
+                <li>The access model is structured to align with the effective use of the strategies.</li>
+                <li>No upfront fees are required.</li>
+                <li>The economic framework reflects actual utilization.</li>
+              </ul>
             </div>
           </SectionReveal>
         </div>
@@ -62,242 +58,196 @@ export default function Home() {
 
       {/* ========== WHAT WE DO NOT DO ========== */}
       <section className={`section ${styles.notDoSection}`}>
-        <div className={styles.notDoInner}>
+        <div className={styles.overviewInner}>
           <SectionReveal>
-            <div className={styles.notDoGrid}>
-              <div className={styles.notDoItem}>
-                <div className={styles.notDoIcon}>✕</div>
-                <p>We do not engage in discretionary trading.</p>
-              </div>
-              <div className={styles.notDoItem}>
-                <div className={styles.notDoIcon}>✕</div>
-                <p>We do not sell trading signals.</p>
-              </div>
-              <div className={styles.notDoItem}>
-                <div className={styles.notDoIcon}>✕</div>
-                <p>We do not provide unrestricted access to the markets.</p>
-              </div>
+            <div className={styles.overviewText}>
+              <ul className={styles.overviewList}>
+                <li>We do not engage in discretionary trading.</li>
+                <li>We do not sell trading signals.</li>
+                <li>We do not provide unrestricted access to the markets.</li>
+                <li>We develop and implement proprietary quantitative strategies based on mathematical modeling, statistical analysis, and artificial intelligence, within a structured and systematic diversification framework.</li>
+              </ul>
             </div>
-          </SectionReveal>
-          <SectionReveal delay={1}>
-            <p className={styles.notDoDesc}>
-              We develop and implement proprietary quantitative strategies based on 
-              mathematical modeling, statistical analysis, and artificial intelligence, 
-              within a structured and systematic diversification framework.
-            </p>
           </SectionReveal>
         </div>
       </section>
 
-      {/* ========== APPROACH / PILLARS ========== */}
+      {/* ========== APPROACH ========== */}
       <section className={`section ${styles.approach}`}>
-        <SectionReveal>
-          <div className={styles.approachHeader}>
-            <span className="label">Our Approach</span>
-            <h2>Where Mathematics Meets Market Structure</h2>
-          </div>
-        </SectionReveal>
-        <div className={styles.pillars}>
-          <SectionReveal delay={1}>
-            <div className={styles.pillar}>
-              <div className={styles.pillarIcon}>Σ</div>
-              <h3>Quantitative models</h3>
-              <p>
-                Strategies are built on structured mathematical models designed to 
-                identify specific market conditions, validated through statistical 
-                analysis and historical data.
-              </p>
-            </div>
-          </SectionReveal>
-          <SectionReveal delay={2}>
-            <div className={styles.pillar}>
-              <div className={styles.pillarIcon}>Δ</div>
-              <h3>Systematic execution</h3>
-              <p>
-                Execution is rule-based and automated, ensuring consistency and 
-                eliminating discretionary intervention.
-              </p>
-            </div>
-          </SectionReveal>
-          <SectionReveal delay={3}>
-            <div className={styles.pillar}>
-              <div className={styles.pillarIcon}>◊</div>
-              <h3>Risk control</h3>
-              <p>
-                Each strategy operates within predefined parameters, continuously 
-                monitored to maintain consistency over time.
-              </p>
+        <div className={styles.overviewInner}>
+          <SectionReveal>
+            <div className={styles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ marginBottom: '48px', fontSize: 'clamp(28px, 3vw, 42px)' }}>Where Mathematics Meets Market Structure</h2>
+              
+              <div className={styles.approachList}>
+                <div className={styles.approachItem}>
+                  <h3>Quantitative models</h3>
+                  <p>
+                    Strategies are built on structured mathematical models designed to 
+                    identify specific market conditions, validated through statistical 
+                    analysis and historical data.
+                  </p>
+                </div>
+                
+                <div className={styles.approachItem}>
+                  <h3>Systematic execution</h3>
+                  <p>
+                    Execution is rule-based and automated, ensuring consistency and 
+                    eliminating discretionary intervention.
+                  </p>
+                </div>
+                
+                <div className={styles.approachItem}>
+                  <h3>Risk control</h3>
+                  <p>
+                    Each strategy operates within predefined parameters, continuously 
+                    monitored to maintain consistency over time.
+                  </p>
+                </div>
+              </div>
             </div>
           </SectionReveal>
         </div>
       </section>
 
       {/* ========== WHY QUANTITATIVE ========== */}
-      <section className={`section ${styles.philosophy}`}>
-        <div className={styles.splitLayout}>
-          <SectionReveal className={styles.splitText}>
-            <div className={styles.whyContent}>
-              <span className="label">Why Quantitative</span>
-              <h2>A Structured, Disciplined Approach</h2>
-              <p>
-                Financial markets have become increasingly complex and interconnected.
-              </p>
-              <p>
-                A structured quantitative approach enables consistent, repeatable execution, 
-                avoiding decisions driven by subjective interpretation.
-              </p>
-              <p>
-                The objective is not to predict markets, but to operate within defined 
-                conditions when statistically relevant scenarios arise.
-              </p>
-              <p className={styles.whyNote}>
-                This approach is designed as a complementary component within a broader portfolio.
-              </p>
-              <p className={styles.whyNote}>
-                It enables structured exposure across multiple instruments and markets, 
-                which would be difficult to manage manually.
-              </p>
-              <p className={styles.whyNote} style={{ marginTop: '24px' }}>
+      <section className={`section ${styles.philosophy}`} style={{ paddingBottom: '60px' }}>
+        <div className={styles.overviewInner}>
+          <SectionReveal>
+            <div className={styles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ marginBottom: '32px' }}>A Structured, Disciplined Approach</h2>
+              <div style={{ marginBottom: '120px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                <p style={{ margin: 0 }}>
+                  Financial markets have become increasingly complex and interconnected.
+                </p>
+                <p style={{ margin: 0 }}>
+                  A structured quantitative approach enables consistent, repeatable execution, 
+                  avoiding decisions driven by subjective interpretation.
+                </p>
+                <p style={{ margin: 0 }}>
+                  The objective is not to predict markets, but to operate within defined 
+                  conditions when statistically relevant scenarios arise.
+                </p>
+              </div>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal className={styles.fullWidth} delay={1}>
+            <div className={styles.overviewVisual} style={{ marginBottom: '140px' }}>
+              <div className={styles.structuredImage}></div>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal delay={2}>
+            <div className={styles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <div style={{ marginBottom: '50px', width: '100%' }}>
+                <p style={{ color: 'var(--ivory)', fontSize: '16px' }}>
+                  This approach is designed as a complementary component within a broader portfolio.
+                </p>
+                <p style={{ color: 'var(--ivory)', fontSize: '16px' }}>
+                  It enables structured exposure across multiple instruments and markets, 
+                  which would be difficult to manage manually.
+                </p>
+              </div>
+
+              <div className="divider" style={{ margin: '0 0 50px 0' }}></div>
+
+              <h3 style={{ fontSize: '20px', color: 'var(--ivory)', marginBottom: '16px' }}>Leverage and Derivatives</h3>
+              <p style={{ color: 'var(--ivory)', fontSize: '16px', marginBottom: 0 }}>
                 In this context, the use of derivatives and, where applicable, financial leverage, 
                 represents an operational component, applied within a controlled and structured framework.
               </p>
-              <div className="divider"></div>
-            </div>
-          </SectionReveal>
-          <SectionReveal delay={2} className={styles.fullWidth}>
-            <div className={styles.overviewVisual}>
-              <div className={styles.structuredImage}></div>
             </div>
           </SectionReveal>
         </div>
       </section>
 
       {/* ========== RISK ========== */}
-      <section className={`section ${styles.risk}`}>
-        <div className={styles.riskInner}>
+      <section className={`section ${styles.risk}`} style={{ paddingTop: '60px' }}>
+        <div className={styles.overviewInner}>
           <SectionReveal>
-            <div className={styles.riskHeader}>
-              <span className="label">Risk Management</span>
-              <h2>Risk is not eliminated. It is managed.</h2>
-              <p>
+            <div className={styles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <h2 style={{ marginBottom: '24px', fontSize: 'clamp(28px, 3vw, 40px)' }}>Risk is not eliminated. It is managed.</h2>
+              <p style={{ marginTop: 0, marginBottom: '32px' }}>
                 Each strategy operates within defined limits through:
               </p>
+              
+              <ul className={styles.overviewList} style={{ gap: '12px', marginBottom: '24px' }}>
+                <li>exposure control</li>
+                <li>diversification across models</li>
+                <li>continuous monitoring of operating conditions</li>
+              </ul>
+              
+              <p style={{ color: 'var(--ivory)', fontSize: '16px', margin: 0 }}>
+                The priority is maintaining consistency and structural coherence over time, 
+                rather than maximizing short-term outcomes.
+              </p>
             </div>
-          </SectionReveal>
-          <div className={styles.riskMetrics}>
-            <SectionReveal delay={1}>
-              <div className={styles.metric}>
-                <span className={styles.metricLabel}>Exposure</span>
-                <div className={styles.metricValue}>Controlled</div>
-                <p className={styles.metricDesc}>
-                  exposure control
-                </p>
-              </div>
-            </SectionReveal>
-            <SectionReveal delay={2}>
-              <div className={styles.metric}>
-                <span className={styles.metricLabel}>Models</span>
-                <div className={styles.metricValue}>Diversified</div>
-                <p className={styles.metricDesc}>
-                  diversification across models
-                </p>
-              </div>
-            </SectionReveal>
-            <SectionReveal delay={3}>
-              <div className={styles.metric}>
-                <span className={styles.metricLabel}>Conditions</span>
-                <div className={styles.metricValue}>Monitored</div>
-                <p className={styles.metricDesc}>
-                  continuous monitoring of operating conditions
-                </p>
-              </div>
-            </SectionReveal>
-          </div>
-          <SectionReveal delay={4}>
-            <p className={styles.riskNote}>
-              The priority is maintaining consistency and structural coherence over time, 
-              rather than maximizing short-term outcomes.
-            </p>
           </SectionReveal>
         </div>
       </section>
 
       {/* ========== METHODOLOGY ========== */}
-      <section className={`section ${styles.philosophy}`}>
-        <div className={styles.whyInner}>
+      <section className={`section ${styles.philosophy}`} style={{ padding: '120px 0' }}>
+        <div className={styles.overviewInner}>
           <SectionReveal>
-            <div className={styles.whyContent}>
-              <span className="label">Methodology</span>
-              <h2>The Foundation</h2>
-              <p>The entire process is based on:</p>
-              <ul className={styles.methodList}>
+            <div className={styles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <p style={{ marginTop: 0, marginBottom: '24px' }}>
+                The entire process is based on:
+              </p>
+              
+              <ul className={styles.overviewList} style={{ gap: '12px', marginBottom: '24px' }}>
                 <li>applied mathematics</li>
                 <li>statistical analysis</li>
                 <li>data-driven research</li>
                 <li>systematic execution</li>
               </ul>
-              <p className={styles.whyNote}>
+              
+              <p style={{ color: 'var(--ivory)', fontSize: '16px', margin: 0 }}>
                 Artificial intelligence is used as a support tool for data analysis and 
                 model refinement, without replacing the underlying methodological framework.
               </p>
-              <div className="divider"></div>
             </div>
           </SectionReveal>
         </div>
       </section>
 
       {/* ========== ACCESS ========== */}
-      <section className={`section ${styles.approach}`}>
-        <SectionReveal>
-          <div className={styles.approachHeader}>
-            <span className="label">Access</span>
-            <h2>Access to the strategies is subject to a preliminary assessment.</h2>
-            <p>The process includes:</p>
-          </div>
-        </SectionReveal>
-        <div className={styles.accessSteps}>
-          <SectionReveal delay={1}>
-            <div className={styles.accessStep}>
-              <div className={styles.accessStepNum}>1</div>
-              <h3>profile evaluation</h3>
-            </div>
-          </SectionReveal>
-          <SectionReveal delay={2}>
-            <div className={styles.accessStep}>
-              <div className={styles.accessStepNum}>2</div>
-              <h3>compatibility assessment</h3>
-            </div>
-          </SectionReveal>
-          <SectionReveal delay={3}>
-            <div className={styles.accessStep}>
-              <div className={styles.accessStepNum}>3</div>
-              <h3>introductory discussion</h3>
-              <p>(where applicable)</p>
-            </div>
-          </SectionReveal>
-          <SectionReveal delay={4}>
-            <div className={styles.accessStep}>
-              <div className={styles.accessStepNum}>4</div>
-              <h3>potential phased activation</h3>
+      <section className={`section ${styles.approach}`} style={{ paddingBottom: '140px' }}>
+        <div className={styles.overviewInner}>
+          <SectionReveal>
+            <div className={styles.overviewText} style={{ width: '100%', textAlign: 'left', alignItems: 'flex-start' }}>
+              <p style={{ marginTop: 0, marginBottom: '24px' }}>
+                Access to the strategies is subject to a preliminary assessment.
+              </p>
+              <p style={{ marginBottom: '32px' }}>
+                The process includes:
+              </p>
+              
+              <ul className={styles.overviewList} style={{ gap: '12px', marginBottom: '24px' }}>
+                <li>profile evaluation</li>
+                <li>compatibility assessment</li>
+                <li>introductory discussion (where applicable)</li>
+                <li>potential phased activation</li>
+              </ul>
+              
+              <p style={{ color: 'var(--ivory)', fontSize: '16px', margin: 0, paddingLeft: '16px' }}>
+                Not all profiles are admitted.
+              </p>
             </div>
           </SectionReveal>
         </div>
-        <SectionReveal delay={5}>
-          <div className={styles.accessNote}>
-            <p>Not all profiles are admitted.</p>
-          </div>
-        </SectionReveal>
       </section>
 
       {/* ========== CLOSING ========== */}
-      <section className={styles.closing}>
+      <section className={styles.closing} style={{ paddingTop: '140px', paddingBottom: '120px' }}>
         <SectionReveal>
           <div className={styles.closingInner}>
             <div className={styles.closingDivider}></div>
             <h2>Assess whether this approach aligns with your portfolio structure and investment objectives.</h2>
-            <div style={{ marginTop: '40px' }}>
+            <div style={{ marginTop: '20px' }}>
               <Button onClick={() => setShowAssessment(true)}>
-                Submit a Request for Preliminary Assessment
+                Request a Preliminary Assessment
               </Button>
             </div>
           </div>
