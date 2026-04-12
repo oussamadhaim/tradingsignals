@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--navy);
   border-top: 1px solid var(--charcoal);
-  padding: 80px 0 40px;
+  padding: 40px 0 20px;
 }
 
 .inner {
@@ -17,38 +17,40 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .logoWrapper h3 {
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
   color: var(--ivory);
   margin-bottom: 0;
 }
 
 .logoImage {
   display: block;
-  height: 64px;
+  height: 40px;
   width: auto;
   object-fit: contain;
 }
 
 .brand p {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--steel);
-  line-height: 1.7;
-  max-width: 360px;
+  line-height: 1.6;
+  max-width: 320px;
 }
 
 .column h4 {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .column ul {
@@ -56,12 +58,16 @@
 }
 
 .column li {
+  margin-bottom: 8px;
+}
+
+.contactColumn li {
   margin-bottom: 12px;
 }
 
 .column a {
-  font-size: 13px;
-  letter-spacing: 0.15em;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--steel);
   transition: color 0.3s ease;
 }
@@ -73,8 +79,9 @@
 .legalLinks {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 32px clamp(24px, 4vw, 48px) 0;
-  margin-top: 48px;
+  padding: 20px clamp(24px, 4vw, 48px) 0;
+  margin-top: 24px;
+  margin-bottom: 20px;
   border-top: 1px solid rgba(42, 51, 71, 0.5);
   display: flex;
   align-items: center;
@@ -84,7 +91,8 @@
 }
 
 .legalLinks a {
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--steel);
   opacity: 0.7;
   transition: all 0.3s ease;
@@ -97,15 +105,13 @@
 
 .legalSep {
   color: var(--charcoal);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .bottom {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 24px clamp(24px, 4vw, 48px) 0;
-  margin-top: 24px;
-  border-top: none;
+  padding: 0 clamp(24px, 4vw, 48px);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -122,9 +128,10 @@
   font-size: 12px;
   color: var(--steel);
   opacity: 0.5;
-  max-width: 520px;
-  line-height: 1.6;
+  max-width: 760px;
+  line-height: 1.55;
   text-align: right;
+  margin-bottom: 32px;
 }
 
 @media (max-width: 768px) {
